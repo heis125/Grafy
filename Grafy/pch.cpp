@@ -21,7 +21,7 @@ int laczenie_liczb(int a, int b) // funkcja tworzaca nowa liczbe ulatiwajaca spr
 {
 	// nie używamy liczb wiekszych niż 99 wiec to rozwiazanie działa, przy indeksach wierzchołków powyżej 99 wymagane uzupełnienie funkcji 
 	int c;
-	c = a * 100 + b;
+	c = a * 1000 + b;
 	return c;
 }
 void tworzenie_pliku(int krawedzie, int wierzcholki) // funkcja tworzaca plik z okreslonymi danymi dla grafu
