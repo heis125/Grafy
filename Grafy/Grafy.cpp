@@ -7,7 +7,6 @@ int main()
 {
 	clock_t start;
 	long double czas_trwania;
-	//srand((int)time(NULL));
 	double gestosc = 1; // gestość grafu watrość od 0 do 1 !
 	int ile_wierzcholkow = 10; // ilosc wierzchołków grafu
 	int ile_krawedzi = (int)((ile_wierzcholkow*(ile_wierzcholkow - 1))*gestosc); // liczenie ile jest krawedzi przy zadanej gęstości 

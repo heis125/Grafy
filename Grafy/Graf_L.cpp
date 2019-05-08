@@ -95,7 +95,6 @@
 		{
 			j = 0;
 			//szukanie wierzcho³ka o najmnijeszym koszcie w tablicy kosztów
-			//for ( j = 0; QS[j]; j++); // usunac chyba
 			for ( u = j++; j < n; j++)
 
 				if (!QS[j] && (d_koszt[j] < d_koszt[u])) u = j;
