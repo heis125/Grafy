@@ -19,6 +19,7 @@
 
 	void Graf_M::zapisz(ofstream &M_sasiedztwa) // wyswietlanie macierzy sasiedztwa
 	{
+		M_sasiedztwa.open("sasiedzi.txt", ios::out | ios::app); // otwieranie pliku 
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < n; j++)
@@ -29,6 +30,7 @@
 			M_sasiedztwa << endl;
 		}
 		M_sasiedztwa << endl << endl;
+		M_sasiedztwa.close(); // zamkniêcie pliku
 	}
 	void Graf_M::wyswietl() // wyswietlanie macierzy sasiedztwa
 	{
@@ -101,3 +103,4 @@
 		dikstra_zapisz(wynik, stos, s_stos, d_koszt, d_poprzednik); // zapisywanie wyniku do pliku
 
 	}
+	
