@@ -74,18 +74,19 @@
 		stos = new int[n]; // stos do odtwarzaania drogi
 		QS = new bool[n]; // tablica sprawdzajaca czy odwiedziliúmy juz wszystkie wierzcho≥ki 
 		s_stos = 0; // wskaünik stosu
-		for (int j = 0; j < n; j++) // Wype≥nianie tablic
+		for (int k = 0; k < n; k++) // Wype≥nianie tablic
 		{
-			d_poprzednik[j] = -1;
-			d_koszt[j] = MAXINT;
-			QS[j] = false;
+			d_poprzednik[k] = -1;
+			d_koszt[k] = MAXINT;
+			QS[k] = false;
 		}
 		d_koszt[poczatek] = 0; // koszt dojscia do poczatkowego elementu jest zawsze 0
 
-		for (int i = 0; i < n; i++)
+		for (int k = 0; k < n; k++)
 		{
+			j = 0;
 			//szukanie wierzcho≥ka o najmnijeszym koszcie w tablicy kosztÛw 
-			for (j = 0; QS[j]; j++);
+			//for (j = 0; QS[j]; j++); // usunac chyba niepotrzebne
 			for (u = j++; j < n; j++)
 				if (!QS[j] && (d_koszt[j] < d_koszt[u])) u = j;
 
@@ -103,4 +104,6 @@
 		dikstra_zapisz(wynik, stos, s_stos, d_koszt, d_poprzednik); // zapisywanie wyniku do pliku
 
 	}
+
+
 	

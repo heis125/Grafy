@@ -7,11 +7,11 @@ int main()
 {
 	clock_t start;
 	long double czas_trwania;
-	srand((int)time(NULL));
+	//srand((int)time(NULL));
 	double gestosc = 1; // gestość grafu watrość od 0 do 1 !
-	int ile_wierzcholkow = 100; // ilosc wierzchołków grafu
+	int ile_wierzcholkow = 10; // ilosc wierzchołków grafu
 	int ile_krawedzi = (int)((ile_wierzcholkow*(ile_wierzcholkow - 1))*gestosc); // liczenie ile jest krawedzi przy zadanej gęstości 
-	int ilosc = 1; // ilosc grafów 
+	int ilosc = 10; // ilosc grafów 
 	ofstream sasiedzi("sasiedzi.txt"); // tworzenie nowego pliku do zapisu macierzy sasiedztwa luc listy sasiedztwa
 	ofstream wynik("wynik.txt"); // tworzenie nowego pliku do zapisu wyników
 

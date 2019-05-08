@@ -21,5 +21,6 @@ public:
 	void zapisz(ofstream &M_sasiedztwa);
 	void dikstra(ofstream &wynik);
 	void dikstra_zapisz(ofstream &wynik, int stos[], int s_stos, int d_koszt[], int d_poprzednik[]);
+
 };
 #endif

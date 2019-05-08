@@ -54,56 +54,36 @@ void tworzenie_pliku(int krawedzie, int wierzcholki) // funkcja tworzaca plik z 
 }
 void wczytywanie_z_pliku(Graf_M A[], int i)
 {
-	int poczatek, wierzcholki, krawedzie; // zmienne potrzebne przy tworzeniu grafu 
 	int v1, v2, waga; // indeks wierzchołka poczatkowego, koncowego oraz waga krawedzi miedzy nimi 
 	fstream plik; // implementacja pliku
 	plik.open("plik.txt", ios::in); // otwieranie pliku 
-	if (plik.good() == true) // wczytywanie grafu z pliku 
-	{
-		plik >> krawedzie >> wierzcholki >> poczatek; // odczytanie ilosci krawedzi, wierzchołków oraz indeksu poczatkowego wierzchołka
-		A[i].e = krawedzie;
-		A[i].n = wierzcholki;
-		A[i].poczatek = poczatek;
+
+		plik >> A[i].e >> A[i].n >> A[i].poczatek; // odczytanie ilosci krawedzi, wierzchołków oraz indeksu poczatkowego wierzchołka
 		A[i].buduj(); // zbudowanie grafu( wyzreowanie macierzy lub stworzenie pustej listy w zależnosci od wybranej implementacji)
-		for (int j = 0; j < A[i].e - 1; j++) // przypisanie sąsiadów do maciezry bądz do listy w zależności od implementacji
+		for (int j = 0; j < A[i].e; j++) // przypisanie sąsiadów do maciezry bądz do listy w zależności od implementacji
 		{
 			plik >> v1 >> v2 >> waga; // odczytanie z pliku inkeksów wierzchołków oraz wagi krawędzi miedzy nimi
 			A[i].dodawanie_krawedzi(v1, v2, waga); // stworzenie krawędzi 
 		}
 
-	}
-	else
-	{
-		cout << "nie udalos sie wczytac pliku" << endl;
-	}
 	plik.close(); // zamknięcie pliku
 	remove("plik.txt"); // usunięcie pliku 
 
 }
 void wczytywanie_z_pliku(Graf_L A[], int i)
 {
-	int poczatek, wierzcholki, krawedzie; // zmienne potrzebne przy tworzeniu grafu 
 	int v1, v2, waga; // indeks wierzchołka poczatkowego, koncowego oraz waga krawedzi miedzy nimi 
 	fstream plik; // implementacja pliku
 	plik.open("plik.txt", ios::in); // otwieranie pliku 
-	if (plik.good() == true) // wczytywanie grafu z pliku 
-	{
-		plik >> krawedzie >> wierzcholki >> poczatek; // odczytanie ilosci krawedzi, wierzchołków oraz indeksu poczatkowego wierzchołka
-		A[i].e = krawedzie;
-		A[i].n = wierzcholki;
-		A[i].poczatek = poczatek;
+
+		plik >> A[i].e >> A[i].n >> A[i].poczatek; // odczytanie ilosci krawedzi, wierzchołków oraz indeksu poczatkowego wierzchołka
 		A[i].buduj(); // zbudowanie grafu( wyzreowanie macierzy lub stworzenie pustej listy w zależnosci od wybranej implementacji)
-		for (int j = 0; j < A[i].e - 1; j++) // przypisanie sąsiadów do maciezry bądz do listy w zależności od implementacji
+		for (int j = 0; j < A[i].e; j++) // przypisanie sąsiadów do maciezry bądz do listy w zależności od implementacji
 		{
 			plik >> v1 >> v2 >> waga; // odczytanie z pliku inkeksów wierzchołków oraz wagi krawędzi miedzy nimi
 			A[i].dodawanie_krawedzi(v1, v2, waga); // stworzenie krawędzi 
 		}
 
-	}
-	else
-	{
-		cout << "nie udalos sie wczytac pliku" << endl;
-	}
 	plik.close(); // zamknięcie pliku
 	remove("plik.txt"); // usunięcie pliku 
 
