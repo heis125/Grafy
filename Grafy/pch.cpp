@@ -1,4 +1,4 @@
-﻿// pch.cpp: plik źródłowy odpowiadający wstępnie skompilowanemu nagłówkowi, niezbędny do powodzenia kompilacji
+﻿
 
 #include "pch.h"
 
@@ -19,7 +19,7 @@ bool czyBylaWylosowana(int liczba, int tab[], int ile) // sprawdzenie czy liczba
 }
 int laczenie_liczb(int a, int b) // funkcja tworzaca nowa liczbe ulatiwajaca sprawdzenie czy dana para wierzchołków juz wystąpoiła 
 {
-	// nie używamy liczb wiekszych niż 99 wiec to rozwiazanie działa, przy indeksach wierzchołków powyżej 99 wymagane uzupełnienie funkcji 
+	// nie używamy liczb wiekszych niż 1000 wiec to rozwiazanie działa, przy indeksach wierzchołków powyżej 999 wymagane uzupełnienie funkcji 
 	int c;
 	c = a * 1000 + b;
 	return c;
@@ -31,7 +31,6 @@ void tworzenie_pliku(int krawedzie, int wierzcholki) // funkcja tworzaca plik z 
 	int poczatek = rand() % wierzcholki;
 	int* tab = new int[krawedzie]; // dablica na juz wykorzystane indeksy wierzchołków 
 	int liczba; // zmienna tymczasowa potrzebna do sprawdzania czy dana liczba juz wystąpiła 
-	//srand((int)time(0));
 	int i = 0;
 	ofstream plik("plik.txt"); // tworzenie nowego pliku do tworzenia grafów
 	plik << krawedzie << " " << wierzcholki << " " << poczatek << " " << endl; // wczytywanie pierwszych parametrów 
@@ -97,4 +96,4 @@ void pliki(ofstream &sasiedzi, ofstream &wynik)
 	wynik << "Wynik" << endl;
 	wynik.close();
 }
-// Ogólnie rzecz biorąc, zignoruj ten plik, ale miej go pod ręką, jeśli używasz wstępnie skompilowanych nagłówków.
+
